@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import Upvote from './components/Upvote.vue'
 </script>
 
 <template>
-  <Upvote />
+  <h1>Upvote</h1>
 </template>
 
 <style scoped>
