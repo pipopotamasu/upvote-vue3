@@ -6,4 +6,9 @@ export const store = createStore({
       selected: false
     }
   },
+  mutations: {
+    toggle (state) {
+      state.selected = !state.selected
+    }
+  }
 })

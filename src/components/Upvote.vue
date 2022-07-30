@@ -4,10 +4,14 @@ import { useStore } from 'vuex'
 
 const store = useStore();
 const selected = computed<boolean>(() => store.state.selected)
+
+const toggle = () => {
+  store.commit('toggle')
+}
 </script>
 
 <template>
-  <button type="button" class="upvote-button">
+  <button type="button" class="upvote-button" @click="toggle">
     <img src="../assets/arrow-tailup.svg" alt="Arrow Tailup Icon " />
   </button>
   <p>selected: {{ selected }}</p>
