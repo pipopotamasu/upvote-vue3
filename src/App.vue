@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Upvote from './components/Upvote.vue'
+import UpvoteSet from './components/UpvoteSet.vue'
 </script>
 
 <template>
-  <Upvote />
+  <UpvoteSet />
 </template>
 
 <style scoped>

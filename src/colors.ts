@@ -10,5 +10,10 @@ export const colors = {
       default: '#343A40',
       selected: '#253CF2',
     }
+  },
+  upvoteList: {
+    border: {
+      default: '#DCDCDC',
+    }
   }
 } as const;
