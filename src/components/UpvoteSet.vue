@@ -1,19 +1,28 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useStore } from 'vuex';
 import Upvote from './Upvote.vue'
 import Add from './Add.vue'
 import { colors } from '../colors';
 
+const store = useStore();
+const count = computed(() => store.state.count)
+
 const onClick = () => {
-  console.log(1)
+  store.commit('add')
 }
 </script>
 
 <template>
   <div class="upvote-set" >
     <ul class="upvote-list">
-      <li class="upvote-item"><Upvote /></li>
-      <li class="upvote-item"><Upvote /></li>
-      <li class="upvote-item"><Upvote /></li>
+      <li
+        class="upvote-item"
+        v-for="num in count"
+        :key="num"
+      >
+        <Upvote />
+      </li>
     </ul>
     <Add @click="onClick" />
   </div>
@@ -31,8 +40,9 @@ const onClick = () => {
   border: 1px solid v-bind('colors.upvoteList.border.default');
   border-radius: 4px;
   padding: 4px;
-  width: 280px;
+  width: 260px;
   margin-right: 1rem;
+  overflow: scroll;
 }
 
 .upvote-item {

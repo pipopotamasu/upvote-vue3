@@ -11,13 +11,13 @@ const color = computed(() => {
   }
 })
 
-const toggle = () => {
+const onClick = () => {
   store.commit('toggle')
 }
 </script>
 
 <template>
-  <button type="button" class="upvote-button" @click="toggle">
+  <button type="button" class="upvote-button" @click="onClick">
     <svg
       width="24"
       height="24"
