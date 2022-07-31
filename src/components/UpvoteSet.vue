@@ -1,19 +1,30 @@
 <script setup lang="ts">
 import Upvote from './Upvote.vue'
+import Add from './Add.vue'
 import { colors } from '../colors';
+
+const onClick = () => {
+  console.log(1)
+}
 </script>
 
 <template>
-  <div>
+  <div class="upvote-set" >
     <ul class="upvote-list">
       <li class="upvote-item"><Upvote /></li>
       <li class="upvote-item"><Upvote /></li>
       <li class="upvote-item"><Upvote /></li>
     </ul>
+    <Add @click="onClick" />
   </div>
 </template>
 
 <style scoped>
+.upvote-set {
+  display: flex;
+  align-items: center;
+}
+
 .upvote-list {
   list-style: none;
   display: flex;
