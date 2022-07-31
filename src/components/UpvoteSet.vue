@@ -1,15 +1,32 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useStore } from 'vuex';
 import Upvote from './Upvote.vue'
 import Add from './Add.vue'
 import { colors } from '../colors';
 
-const store = useStore();
-const count = computed(() => store.state.count)
+const { index, count, selected } = defineProps({
+  index: {
+    type: Number,
+    required: true
+  },
+  count: {
+    type: Number,
+    required: true
+  },
+  selected: {
+    type: Boolean,
+    required: true
+  }
+})
 
-const onClick = () => {
-  store.commit('add')
+const { commit } = useStore();
+
+const onClickAdd = () => {
+  commit('addUpvote', index)
+}
+
+const onClickUpvote = () => {
+  commit('toggleUpvote', index)
 }
 </script>
 
@@ -21,10 +38,10 @@ const onClick = () => {
         v-for="num in count"
         :key="num"
       >
-        <Upvote />
+        <Upvote @click="onClickUpvote" :selected="selected" />
       </li>
     </ul>
-    <Add @click="onClick" />
+    <Add @click="onClickAdd" />
   </div>
 </template>
 

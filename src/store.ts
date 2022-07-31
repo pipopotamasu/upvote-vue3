@@ -3,16 +3,15 @@ import { createStore } from 'vuex'
 export const store = createStore({
   state () {
     return {
-      selected: false,
-      count: 1,
+      upvoteLists: [{ id: 1, selected: false, count: 1 }, { id: 2, selected: false, count: 1 }, { id: 3, selected: false, count: 1 }],
     }
   },
   mutations: {
-    toggle (state) {
-      state.selected = !state.selected
+    toggleUpvote (state, index: number) {
+      state.upvoteLists[index].selected = !state.upvoteLists[index].selected
     },
-    add (state) {
-      state.count += 1;
-    }
+    addUpvote (state, index: number) {
+      state.upvoteLists[index].count += 1
+    },
   }
 })

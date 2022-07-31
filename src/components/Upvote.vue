@@ -1,23 +1,25 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useStore } from 'vuex'
 import { colors } from '../colors';
 
-const store = useStore();
-const color = computed(() => {
-  return {
-    arrow: store.state.selected ? colors.arrow.color.selected : colors.arrow.color.default,
-    buttonBg: store.state.selected ? colors.upvoteButton.bg.selected : colors.upvoteButton.bg.default,
+const { selected } = defineProps({
+  selected: {
+    type: Boolean,
+    required: true
   }
 })
 
-const onClick = () => {
-  store.commit('toggle')
-}
+const color = computed(() => {
+  const { arrow, upvoteButton } = colors;
+  return {
+    arrow: selected ? arrow.color.selected : arrow.color.default,
+    buttonBg: selected ? upvoteButton.bg.selected : upvoteButton.bg.default,
+  }
+})
 </script>
 
 <template>
-  <button type="button" class="upvote-button" @click="onClick">
+  <button type="button" class="upvote-button">
     <svg
       width="24"
       height="24"
