@@ -35,7 +35,6 @@ const onClick = () => {
 }
 
 .upvote-list {
-  list-style: none;
   display: flex;
   border: 1px solid v-bind('colors.upvoteList.border.default');
   border-radius: 4px;

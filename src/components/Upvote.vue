@@ -34,9 +34,6 @@ const onClick = () => {
 
 <style scoped>
 .upvote-button {
-  cursor: pointer;
-  padding: 0;
-  border: none;
   border-radius: 4px;
   background-color: v-bind('color.buttonBg');
   width: 2rem;

@@ -21,15 +21,12 @@ import { colors } from '../colors';
 <style scoped>
 .add-button {
   background-color: v-bind('colors.button.bg.default');
-  cursor: pointer;
-  border: none;
   border-radius: 4px;
   width: 2rem;
   height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
 }
 
 .add-path {
