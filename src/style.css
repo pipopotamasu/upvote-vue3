@@ -1,0 +1,10 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}

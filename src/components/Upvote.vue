@@ -1,29 +1,30 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useStore } from 'vuex'
 import { colors } from '../colors';
 
-const store = useStore();
-const color = computed(() => {
-  return {
-    arrow: store.state.selected ? colors.arrow.color.selected : colors.arrow.color.default,
-    buttonBg: store.state.selected ? colors.upvoteButton.bg.selected : colors.upvoteButton.bg.default,
+const { selected } = defineProps({
+  selected: {
+    type: Boolean,
+    required: true
   }
 })
 
-const toggle = () => {
-  store.commit('toggle')
-}
+const color = computed(() => {
+  const { arrow, upvoteButton } = colors;
+  return {
+    arrow: selected ? arrow.color.selected : arrow.color.default,
+    buttonBg: selected ? upvoteButton.bg.selected : upvoteButton.bg.default,
+  }
+})
 </script>
 
 <template>
-  <button type="button" class="upvote-button" @click="toggle">
+  <button type="button" class="upvote-button">
     <svg
       width="24"
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="arrow-path"
@@ -35,9 +36,6 @@ const toggle = () => {
 
 <style scoped>
 .upvote-button {
-  cursor: pointer;
-  padding: 0;
-  border: none;
   border-radius: 4px;
   background-color: v-bind('color.buttonBg');
   width: 2rem;
