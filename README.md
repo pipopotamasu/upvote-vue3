@@ -1,3 +1,5 @@
+[![CI](https://github.com/pipopotamasu/upvote-vue3/actions/workflows/ci.yml/badge.svg)](https://github.com/pipopotamasu/upvote-vue3/actions/workflows/ci.yml)
+
 # Vue 3 JS Technical Project: Upvote
 https://scrawlr.atlassian.net/wiki/external/1502773316/ODMxNmZjMWQ4MjlhNDdkNmJlY2IzZDhkNDUxNjJiMGY
 
