@@ -14,7 +14,11 @@ const upvoteLists = computed(() => state.upvoteLists)
       v-for="({ id, count, selected }, index) in upvoteLists"
       :key="`${id}${selected}`"
     >
-      <UpvoteSet :index="index" :count="count" :selected="selected" />
+      <UpvoteSet
+        :index="index"
+        :count="count"
+        :selected="selected"
+      />
     </li>
   </ul>
 </template>

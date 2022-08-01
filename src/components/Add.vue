@@ -3,7 +3,10 @@ import { colors } from '../colors';
 </script>
 
 <template>
-  <button type="button" class="add-button">
+  <button
+    type="button"
+    class="add-button"
+  >
     <svg
       width="24"
       height="24"

@@ -31,14 +31,17 @@ const onClickUpvote = () => {
 </script>
 
 <template>
-  <div class="upvote-set" >
+  <div class="upvote-set">
     <ul class="upvote-list">
       <li
-        class="upvote-item"
         v-for="num in count"
         :key="num"
+        class="upvote-item"
       >
-        <Upvote @click="onClickUpvote" :selected="selected" />
+        <Upvote
+          :selected="selected"
+          @click="onClickUpvote"
+        />
       </li>
     </ul>
     <Add @click="onClickAdd" />

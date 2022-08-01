@@ -19,7 +19,10 @@ const color = computed(() => {
 </script>
 
 <template>
-  <button type="button" class="upvote-button">
+  <button
+    type="button"
+    class="upvote-button"
+  >
     <svg
       width="24"
       height="24"
