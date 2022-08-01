@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useStore } from '../store';
+import { onUpdated, ref } from 'vue';
 import Upvote from './Upvote.vue';
 import Add from './Add.vue';
+import { useStore } from '../store';
 import { colors } from '../colors';
 
 const props = defineProps({
@@ -28,11 +29,19 @@ const onClickAdd = () => {
 const onClickUpvote = () => {
   commit('toggleUpvote', props.index);
 };
+
+const listRef = ref<HTMLUListElement | null>(null);
+
+onUpdated(() => {
+  if (listRef.value) {
+    listRef.value.scrollTo(listRef.value.scrollWidth, 0);
+  }
+});
 </script>
 
 <template>
   <div class="upvote-set">
-    <ul class="upvote-list">
+    <ul ref="listRef" class="upvote-list">
       <li v-for="num in count" :key="num" class="upvote-item">
         <Upvote :selected="selected" @click="onClickUpvote" />
       </li>
