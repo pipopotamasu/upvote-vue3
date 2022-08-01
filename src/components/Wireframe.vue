@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useStore } from 'vuex'
+import { useStore } from '../store'
 import UpvoteSet from './UpvoteSet.vue'
 
 const { state } = useStore();

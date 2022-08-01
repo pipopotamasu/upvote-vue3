@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useStore } from 'vuex';
+import { useStore } from '../store'
 import Upvote from './Upvote.vue'
 import Add from './Add.vue'
 import { colors } from '../colors';
