@@ -1,47 +1,40 @@
 <script setup lang="ts">
-import { useStore } from '../store'
-import Upvote from './Upvote.vue'
-import Add from './Add.vue'
+import { useStore } from '../store';
+import Upvote from './Upvote.vue';
+import Add from './Add.vue';
 import { colors } from '../colors';
 
 const props = defineProps({
   index: {
     type: Number,
-    required: true
+    required: true,
   },
   count: {
     type: Number,
-    required: true
+    required: true,
   },
   selected: {
     type: Boolean,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
 const { commit } = useStore();
 
 const onClickAdd = () => {
-  commit('addUpvote', props.index)
-}
+  commit('addUpvote', props.index);
+};
 
 const onClickUpvote = () => {
-  commit('toggleUpvote', props.index)
-}
+  commit('toggleUpvote', props.index);
+};
 </script>
 
 <template>
   <div class="upvote-set">
     <ul class="upvote-list">
-      <li
-        v-for="num in count"
-        :key="num"
-        class="upvote-item"
-      >
-        <Upvote
-          :selected="selected"
-          @click="onClickUpvote"
-        />
+      <li v-for="num in count" :key="num" class="upvote-item">
+        <Upvote :selected="selected" @click="onClickUpvote" />
       </li>
     </ul>
     <Add @click="onClickAdd" />

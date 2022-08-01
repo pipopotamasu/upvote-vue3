@@ -1,24 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useStore } from '../store'
-import UpvoteSet from './UpvoteSet.vue'
+import { computed } from 'vue';
+import { useStore } from '../store';
+import UpvoteSet from './UpvoteSet.vue';
 
 const { state } = useStore();
-const upvoteLists = computed(() => state.upvoteLists)
-
+const upvoteLists = computed(() => state.upvoteLists);
 </script>
 
 <template>
   <ul class="wireframe">
-    <li
-      v-for="({ id, count, selected }, index) in upvoteLists"
-      :key="id"
-    >
-      <UpvoteSet
-        :index="index"
-        :count="count"
-        :selected="selected"
-      />
+    <li v-for="({ id, count, selected }, index) in upvoteLists" :key="id">
+      <UpvoteSet :index="index" :count="count" :selected="selected" />
     </li>
   </ul>
 </template>
