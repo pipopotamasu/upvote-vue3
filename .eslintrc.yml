@@ -11,5 +11,6 @@ plugins:
   - vue
   - '@typescript-eslint'
 rules: {
+  'eol-last': 2,
   'vue/multi-word-component-names': 'off'
 }
