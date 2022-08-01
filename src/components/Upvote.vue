@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { colors } from '../colors';
 
-const { selected } = defineProps({
+const props = defineProps({
   selected: {
     type: Boolean,
     required: true
@@ -12,8 +12,8 @@ const { selected } = defineProps({
 const color = computed(() => {
   const { arrow, upvoteButton } = colors;
   return {
-    arrow: selected ? arrow.color.selected : arrow.color.default,
-    buttonBg: selected ? upvoteButton.bg.selected : upvoteButton.bg.default,
+    arrow: props.selected ? arrow.color.selected : arrow.color.default,
+    buttonBg: props.selected ? upvoteButton.bg.selected : upvoteButton.bg.default,
   }
 })
 </script>

@@ -4,7 +4,7 @@ import Upvote from './Upvote.vue'
 import Add from './Add.vue'
 import { colors } from '../colors';
 
-const { index, count, selected } = defineProps({
+const props = defineProps({
   index: {
     type: Number,
     required: true
@@ -22,11 +22,11 @@ const { index, count, selected } = defineProps({
 const { commit } = useStore();
 
 const onClickAdd = () => {
-  commit('addUpvote', index)
+  commit('addUpvote', props.index)
 }
 
 const onClickUpvote = () => {
-  commit('toggleUpvote', index)
+  commit('toggleUpvote', props.index)
 }
 </script>
 
