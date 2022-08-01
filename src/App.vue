@@ -5,6 +5,3 @@ import Wireframe from './components/Wireframe.vue'
 <template>
   <Wireframe />
 </template>
-
-<style scoped>
-</style>
